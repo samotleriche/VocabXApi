@@ -1,35 +1,79 @@
+const Quiz = require('../models/Quiz');
+const ErrorResponse = require('../utils/errorResponse');
+const asyncHandler = require('../middleware/async');
+
+
 
 // @desc    Get all quizzes
 // @route   Get /api/v1/bootcamps
 // @access  Public 
-exports.getQuizzes = (req, res, next) => {
-    res.status(200).json({ success: true, msg: 'Show all Quizzes', hello: req.hello});
-}
+exports.getQuizzes = asyncHandler(async (req, res, next) => {
+
+    const quizzes = await Quiz.find();
+
+    res
+        .status(200)
+        .json({ success: true, count: quizzes.length, data: quizzes })
+
+});
 
 // @desc    Get single quizzes
 // @route   Get /api/v1/bootcamps/:id
 // @access  Public 
-exports.getQuiz = (req, res, next) => {
-    res.status(200).json({ success: true, msg: `Showing Quiz ${req.params.id}`});
-}
+exports.getQuiz = asyncHandler(async (req, res, next) => {
+
+    const quiz = await Quiz.findById(req.params.id);
+
+    if(!quiz) {
+        return next(new ErrorResponse(`Quiz not found with id of ${req.params.id}`, 404));
+    }
+
+    res.status(200).json({ success: true, data: quiz })
+});
 
 // @desc    Create a new quiz
 // @route   POST /api/v1/bootcamps/:id
 // @access  Private 
-exports.createQuiz = (req, res, next) => {
-    res.status(201).json({ success: true, msg: 'Created a Quiz'});
-}
+exports.createQuiz = asyncHandler(async (req, res, next) => {
+
+    const quiz = await Quiz.create(req.body);
+    res.status(201).json({
+        success: true,
+        data: quiz
+    });
+});
 
 // @desc    Update a quiz
 // @route   PUT /api/v1/bootcamps/:id
 // @access  Private 
-exports.updateQuiz = (req, res, next) => {
-    res.status(202).json({ success: true, msg: `Quiz ${req.params.id} updated`});
-}
+exports.updateQuiz = asyncHandler(async (req, res, next) => {
+    const quiz = await Quiz.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+        runValidators: true
+    });
+
+    if(!quiz) {
+        return next(new ErrorResponse(`Quiz not found with id of ${req.params.id}`, 404));
+    }
+
+    res.status(202).json({
+        success: true,
+        data: quiz
+    });
+});
 
 // @desc    Delete a quiz
 // @route   DELETE /api/v1/bootcamps/:id
 // @access  Private 
-exports.deleteQuiz = (req, res, next) => {
-    res.status(202).json({ success: true, msg: `Quiz ${req.params.id} deleted`});
-}
+exports.deleteQuiz = asyncHandler(async (req, res, next) => {
+
+    const quiz = await Quiz.findByIdAndDelete(req.params.id);
+    res.status(200).json({
+        success: true,
+        data: quiz
+    });
+
+    if(!quiz) {
+        return next(new ErrorResponse(`Quiz not found with id of ${req.params.id}`, 404));
+    }
+});

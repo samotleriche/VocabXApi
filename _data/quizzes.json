@@ -1,0 +1,30 @@
+[
+	{
+		"_id": "5d713995b721c3bb38c1f5d0",
+		"owner": "5d7a514b5d2c12c7449be045",
+		"name": "Easy words",
+		"description": "High frequency words",
+		"words": [
+            "5d7a514b5d2c12c7449be020",
+            "5d7a514b5d2c12c7449be021",
+            "5d7a514b5d2c12c7449be022" 
+        ],
+        "completed": false,
+        "progress": "none",
+        "wordCount": 5
+    },
+    {
+		"_id": "5d713995b721c3bb38c1f5d0",
+		"owner": "5d7a514b5d2c12c7449be045",
+		"name": "Medium words",
+		"description": "Higher frequency words",
+		"words": [
+            "5d7a514b5d2c12c7449be020",
+            "5d7a514b5d2c12c7449be021",
+            "5d7a514b5d2c12c7449be022" 
+        ],
+        "completed": false,
+        "progress": "none",
+        "wordCount": 6
+    }
+]
