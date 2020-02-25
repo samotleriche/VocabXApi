@@ -6,12 +6,13 @@ const connectDB = require('./config/db');
 const colors = require('colors');
 const errorHandler = require('./middleware/error');
 
+// Load environment variables
+dotenv.config({ path: './config/config.env' });
 
 // Route files
 const quizzes = require('./routes/quizzes');
+const users = require('./routes/users');
 
-// Load environment variables
-dotenv.config({ path: './config/config.env' });
 
 // Connect to db
 connectDB();
@@ -32,6 +33,7 @@ app.use(logger);
 // Mount routers
 
 app.use('/api/v1/quizzes', quizzes);
+app.use('/api/v1/users', users);
 
 app.use(errorHandler);
 

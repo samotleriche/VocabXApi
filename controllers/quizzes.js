@@ -68,12 +68,15 @@ exports.updateQuiz = asyncHandler(async (req, res, next) => {
 exports.deleteQuiz = asyncHandler(async (req, res, next) => {
 
     const quiz = await Quiz.findByIdAndDelete(req.params.id);
+
+    if(!quiz) {
+        return next(new ErrorResponse(`Quiz not found with id of ${req.params.id}`, 404));
+    }
+    
     res.status(200).json({
         success: true,
         data: quiz
     });
 
-    if(!quiz) {
-        return next(new ErrorResponse(`Quiz not found with id of ${req.params.id}`, 404));
-    }
+
 });

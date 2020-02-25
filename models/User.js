@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+const geocoder = require('../utils/geocoder');
 
 const UserSchema = new mongoose.Schema({
     name: {
@@ -9,10 +10,6 @@ const UserSchema = new mongoose.Schema({
         maxlength: [50, 'Name cannot be more than 50 characters']
     },
     slug: String,
-    email: {
-        type: String,
-        required: true,
-    },
     role: {
         type: String,
         enum: [
@@ -22,23 +19,56 @@ const UserSchema = new mongoose.Schema({
     },
     email: {
         type: String,
+        unique: true,
         match: [
             /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
             'Please add a valid email'
         ]
     },
     address: {
-        type
+        type: String,
+        required: [true, 'Please add an address']
+    },
+    location: {
+        type: {
+            type: String,
+            enum: ['Point'],
+            required: false
+        },
+        coordinates: {
+            type: [Number],
+            required: false,
+            index: '2dsphere'
+        },
+        formattedAddress: String,
+        street: String,
+        city: String,
+        state: String,
+        zipcode: String,
+        ccountry: String,
     }
 });
 
+
+UserSchema.pre('save', function(next) {
+    this.slug = slugify(this.name, { lower: true })
+    next();
+});
+
+UserSchema.pre('save', async function(next) {
+    const loc = await geocoder.geocode(this.address);
+    this.location = {
+        type: 'Point',
+        coordinates: [ loc[0].longitude, loc[0].latitude ],
+        formattedAddress: loc[0].formattedAddress,
+        street: loc[0].streetName,
+        city: loc[0].city,
+        state: loc[0].state,
+        zipcode: loc[0].zipcode,
+        country: loc[0].countryCode
+    }
+    this.address = undefined;
+    next();
+});
+
 module.exports = mongoose.model('user', UserSchema);
-
-
-"_id": "5d7a514b5d2c12c7449be042",;
-		"name": "Admin Account",;
-		"email": "admin@gmail.com",;
-		"role": "user",;
-        "password": "123456",;
-        "address": "233 Bay State Rd Boston MA 02215";
-	
