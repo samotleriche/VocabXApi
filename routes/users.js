@@ -1,6 +1,17 @@
 const express = require('express');
-const { getUser, getUsers, updateUser, createUser, deleteUser} = require('../controllers/users')
+const 
+{ 
+    getUser, 
+    getUsers, 
+    updateUser, 
+    createUser, 
+    deleteUser,
+    getUserInRadius
+} = require('../controllers/users')
+
 const router = express.Router();
+
+router.route('/radius/:zipcode/:distance').get(getUserInRadius);
 
 router.route('/')
     .get(getUsers)
