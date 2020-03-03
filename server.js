@@ -12,7 +12,7 @@ dotenv.config({ path: './config/config.env' });
 // Route files
 const quizzes = require('./routes/quizzes');
 const users = require('./routes/users');
-
+const words = require('./routes/words');
 
 // Connect to db
 connectDB();
@@ -31,9 +31,10 @@ if (process.env.NODE_ENV === 'development') {
 app.use(logger);
 
 // Mount routers
-
 app.use('/api/v1/quizzes', quizzes);
 app.use('/api/v1/users', users);
+app.use('/api/v1/words', words);
+
 
 app.use(errorHandler);
 

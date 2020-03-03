@@ -2,6 +2,7 @@
     {
 		"_id": "5d7a514b5d2c12c7449be020",
         "title": "Amalgam",
+        "definition" : "a mixture or blend",
         "cases": [
             {
                 "text": "a mixture or blend",
@@ -10,11 +11,14 @@
         ],
 		"POS": "noun",
 		"origin": "late 15th century: from French amalgame or medieval Latin amalgama, from Greek malagma ‘an emollient’.",
-		"pronounce": "/əˈmalɡəm/"
+        "pronounce": "/əˈmalɡəm/",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "progress": "learning"
     },
     {
 		"_id": "5d7a514b5d2c12c7449be021",
-		"title": "Galvanize",
+        "title": "Galvanize",
+        "definition" : "shock or excite (someone) into taking action.",
 		"cases": [
             {
                 "text": "shock or excite (someone) into taking action.",
@@ -27,11 +31,14 @@
         ],
 		"POS": "verb",
 		"origin": "early 19th century (in the sense ‘stimulate by electricity’): from French galvaniser (see Galvani, Luigi).",
-		"pronounce": "/ˈɡalvəˌnīz/"
+		"pronounce": "/ˈɡalvəˌnīz/",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "progress": "learning"
     },
     {
 		"_id": "5d7a514b5d2c12c7449be022",
         "title": "Acrimony",
+        "definition": "bitterness or ill feeling.",
         "cases": [
             {
                 "text": "bitterness or ill feeling.",
@@ -40,7 +47,9 @@
         ],
 		"POS": "noun",
 		"origin": "mid 16th century (in the sense ‘bitter taste or smell’): from French acrimonie or Latin acrimonia, from acer, acri- ‘pungent, acrid’.",
-		"pronounce": "/ˈakrəˌmōnē/"
+		"pronounce": "/ˈakrəˌmōnē/",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "progress": "learned"
     }
     
 ]

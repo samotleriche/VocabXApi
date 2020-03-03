@@ -1,16 +1,6 @@
 [
 	{
-		"location": {
-			"type": "Point",
-			"coordinates": [
-				-73.200576,
-				44.478305
-			],
-			"formattedAddress": "85 S Prospect St, Burlington, VT 05401-3444, US",
-			"street": "85 S Prospect St",
-			"city": "Burlington",
-			"zipcode": "05401-3444"
-		},
+		"address": "85 South Prospect Street Burlington VT 05405",
 		"_id": "5e54abd317b67149faae0d64",
 		"name": "bobby The KillaWhale",
 		"email": "aaaefg@gmafdsil.com",
@@ -18,17 +8,7 @@
 		"__v": 0
 	},
 	{
-		"location": {
-			"type": "Point",
-			"coordinates": [
-				-73.200576,
-				44.478305
-			],
-			"formattedAddress": "85 S Prospect St, Burlington, VT 05401-3444, US",
-			"street": "85 S Prospect St",
-			"city": "Burlington",
-			"zipcode": "05401-3444"
-		},
+		"address": "45 Upper College Rd Kingston RI 02881",
 		"_id": "5e54ae546c725e4fc5958ff8",
 		"name": "bobby The KillaWhale",
 		"email": "aaaefg@gmfafdsil.com",
