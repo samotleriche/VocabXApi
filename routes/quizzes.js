@@ -1,6 +1,19 @@
 const express = require('express');
-const { getQuiz, getQuizzes, updateQuiz, createQuiz, deleteQuiz} = require('../controllers/quizzes')
+const { 
+    getQuiz, 
+    getQuizzes, 
+    updateQuiz, 
+    createQuiz, 
+    deleteQuiz
+} = require('../controllers/quizzes')
 const router = express.Router();
+
+// Include other resource routers
+
+const wordRouter = require('./words');
+
+// Re-route into other resource routers
+router.use('/:quizId/words', wordRouter);
 
 router.route('/')
     .get(getQuizzes)

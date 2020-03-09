@@ -30,10 +30,10 @@ const WordSchema = new mongoose.Schema({
     },
     quiz: {
         type: mongoose.Schema.ObjectId,
-        ref: 'Quiz',
+        ref: 'quiz',
         required: true
     }
 
 });
 
-module.exports = mongoose.model('Word', WordSchema)
+module.exports = mongoose.model('word', WordSchema)

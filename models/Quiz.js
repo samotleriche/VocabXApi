@@ -33,6 +33,9 @@ const QuizSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
+}, {
+    toJSON: { virtuals: true},
+    toObject: { virtuals: true}
 });
 
 // Create Quiz slug from the name
@@ -41,6 +44,17 @@ QuizSchema.pre('save', function(next) {
     next();
 });
 
+// Reverse populate with virtuals
+QuizSchema.virtual('words', {
+    ref: 'word',
+    localField: '_id',
+    foreignField: 'quiz',
+    justOne: false
+});
 
+QuizSchema.pre('save', function(next) {
+    this.wordCount = this.words.length;
+    next();
+});
 
 module.exports = mongoose.model('quiz', QuizSchema);

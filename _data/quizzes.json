@@ -3,103 +3,31 @@
         "progress": [
             "none"
         ],
-        "wordCount": 5,
         "_id": "5e530ba5f85ba704fe658686",
         "name": "Easiest words",
         "description": "High frequency words",
         "completed": true,
         "__v": 0,
-        "createdAt": "2020-02-26T01:48:35.298Z"
+        "createdAt": "2020-01-26T01:48:35.298Z"
     },
     {
         "progress": [
             "started"
         ],
-        "wordCount": 55,
         "_id": "5e530ce82e6d9c064eb66f2b",
         "name": "Easiestest words",
         "description": "Higher frequency wordssssssss",
         "completed": true,
-        "createdAt": "2020-02-23T23:38:16.865Z",
-        "__v": 0
+        "createdAt": "2020-03-23T23:38:16.865Z"
     },
     {
         "progress": [
             "none"
         ],
-        "wordCount": 6,
         "_id": "5e5310aa0865680da4667b95",
         "name": "Medium words",
         "description": "Higher frequency words",
         "completed": false,
-        "createdAt": "2020-02-23T23:54:18.110Z",
-        "__v": 0
-    },
-    {
-        "progress": [
-            "none"
-        ],
-        "wordCount": 6,
-        "_id": "5e531dc1a75c7c209771120f",
-        "name": "Mediumasdf words",
-        "description": "Higherasdf frequency words",
-        "completed": false,
-        "createdAt": "2020-02-24T00:50:09.245Z",
-        "__v": 0
-    },
-    {
-        "progress": [],
-        "wordCount": 0,
-        "_id": "5e531eebb0260d2202db1e97",
-        "name": "billybong",
-        "description": "asdfasdfasdfadsf",
-        "createdAt": "2020-02-24T00:55:07.466Z",
-        "__v": 0
-    },
-    {
-        "progress": [
-            "none"
-        ],
-        "wordCount": 0,
-        "_id": "5e531f3c6021aa228f81779b",
-        "name": "billybongdfd",
-        "description": "asdfasdfasdfadsf",
-        "createdAt": "2020-02-24T00:56:28.573Z",
-        "__v": 0
-    },
-    {
-        "progress": [
-            "none"
-        ],
-        "wordCount": 0,
-        "_id": "5e5322ab701cd52a8403b5a1",
-        "description": "whatever",
-        "name": "anothername",
-        "createdAt": "2020-02-24T01:11:07.613Z",
-        "__v": 0
-    },
-    {
-        "progress": [
-            "none"
-        ],
-        "wordCount": 0,
-        "_id": "5e5322f7ab25a82aeb55bb94",
-        "description": "whatever",
-        "name": "ANnothernamee",
-        "createdAt": "2020-02-24T01:12:23.318Z",
-        "slug": "annothernamee",
-        "__v": 0
-    },
-    {
-        "progress": [
-            "none"
-        ],
-        "wordCount": 0,
-        "_id": "5e532332ab25a82aeb55bb95",
-        "description": "whateverd",
-        "name": "ANnothernamee for you to use",
-        "createdAt": "2020-02-24T01:13:22.554Z",
-        "slug": "annothernamee-for-you-to-use",
-        "__v": 0
+        "createdAt": "2020-02-23T23:54:18.110Z"
     }
 ]

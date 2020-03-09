@@ -23,7 +23,7 @@ exports.getQuizzes = asyncHandler(async (req, res, next) => {
 
     queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
 
-    query = Quiz.find(JSON.parse(queryStr));
+    query = Quiz.find(JSON.parse(queryStr)).populate('words');
     
     // Select fields
     if(req.query.select) {
@@ -80,7 +80,7 @@ exports.getQuizzes = asyncHandler(async (req, res, next) => {
 // @access  Public 
 exports.getQuiz = asyncHandler(async (req, res, next) => {
 
-    const quiz = await Quiz.findById(req.params.id);
+    const quiz = await Quiz.findById(req.params.id).populate('words');
 
     if(!quiz) {
         return next(new ErrorResponse(`Quiz not found with id of ${req.params.id}`, 404));

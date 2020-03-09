@@ -1,4 +1,5 @@
 const Word = require('../models/Word');
+const Quiz = require('../models/Quiz');
 const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middleware/async');
 
@@ -9,11 +10,14 @@ const asyncHandler = require('../middleware/async');
 exports.getWords = asyncHandler(async (req, res, next) => {
 
     let query;
-
+    console.log(req.params);
     if(req.params.quizId) {
-        query = Word.find({ quiz: req.params.quizId });
+        query = Word.find({ quiz: req.params.quizId});
     } else {
-        query = Word.find();
+        query = Word.find().populate({
+            path: 'quiz',
+            select: 'name description'
+        });
     }
 
     const words = await query;
@@ -27,47 +31,60 @@ exports.getWords = asyncHandler(async (req, res, next) => {
 // @desc    Get word by id
 // @route   Get /api/v1/user/:id
 // @access  Public 
-exports.getUser = asyncHandler(async (req, res, next) => {
+exports.getWord = asyncHandler(async (req, res, next) => {
 
-    const user = await User.findById(req.params.id);
+    const word = await Word.findById(req.params.id).populate({
+        path: 'quiz',
+        select: 'name description'
+    });
 
-    if(!user) {
+    if(!word) {
         return next(
-            new ErrorResponse(`User not found with id of ${req.params.id}`,
+            new ErrorResponse(`No word with id of ${req.params.id}`,
              404));
     }
 
     res
         .status(200)
-        .json({ success: true, data: user })
+        .json({ success: true, data: word })
 
 });
 
 // @desc    create word
-// @route   Get /api/v1/users
-// @access  Public 
-exports.createUser = asyncHandler(async (req, res, next) => {
+// @route   POST /api/v1/users
+// @route   POST /api/v1/quizzes/:quizId/words
+// @access  Private
+exports.createWord = asyncHandler(async (req, res, next) => {
 
-    const user = await User.create(req.body);
+    req.body.quiz = req.params.quizId;
+
+    const quiz = await Quiz.findById(req.params.quizId);
+    if (!quiz){
+        return next(
+            new ErrorResponse(`No Quiz with id of ${req.params.quizId} found`,
+             404));
+    }
+
+    const word = await Word.create(req.body);
     res
         .status(201)
         .json({ 
             success: true,
-            data: user })
+            data: word })
 
 });
 
 // @desc    update word
 // @route   Get /api/v1/users
 // @access  Public 
-exports.updateUser = asyncHandler(async (req, res, next) => {
+exports.updateWord = asyncHandler(async (req, res, next) => {
 
-    const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+    const word = await User.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
         runValidators: true
     });
 
-    if(!user) {
+    if(!word) {
         return next(
             new ErrorResponse(`User not found with id of ${req.params.id}`,
              404));
@@ -75,7 +92,7 @@ exports.updateUser = asyncHandler(async (req, res, next) => {
 
     res
         .status(200)
-        .json({ success: true, data: user })
+        .json({ success: true, data: word })
 
 });
 

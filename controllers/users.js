@@ -35,7 +35,7 @@ exports.getUser = asyncHandler(async (req, res, next) => {
 
 });
 
-// @desc    Get all users
+// @desc    Create a user
 // @route   Get /api/v1/users
 // @access  Public 
 exports.createUser = asyncHandler(async (req, res, next) => {
@@ -49,8 +49,8 @@ exports.createUser = asyncHandler(async (req, res, next) => {
 
 });
 
-// @desc    Get all users
-// @route   Get /api/v1/users
+// @desc    Update a user
+// @route   Get /api/v1/users/:id
 // @access  Public 
 exports.updateUser = asyncHandler(async (req, res, next) => {
 
@@ -72,7 +72,7 @@ exports.updateUser = asyncHandler(async (req, res, next) => {
 });
 
 // @desc    Get all users
-// @route   Get /api/v1/users
+// @route   Get /api/v1/users/:id
 // @access  Public 
 exports.deleteUser = asyncHandler(async (req, res, next) => {
 

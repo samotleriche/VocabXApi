@@ -12,8 +12,8 @@
 		"POS": "noun",
 		"origin": "late 15th century: from French amalgame or medieval Latin amalgama, from Greek malagma ‘an emollient’.",
         "pronounce": "/əˈmalɡəm/",
-        "quiz": "5e530ba5f85ba704fe658686",
-        "progress": "learning"
+        "progress": "learning",
+        "quiz": "5e530ba5f85ba704fe658686"
     },
     {
 		"_id": "5d7a514b5d2c12c7449be021",
@@ -32,8 +32,8 @@
 		"POS": "verb",
 		"origin": "early 19th century (in the sense ‘stimulate by electricity’): from French galvaniser (see Galvani, Luigi).",
 		"pronounce": "/ˈɡalvəˌnīz/",
-        "quiz": "5e530ba5f85ba704fe658686",
-        "progress": "learning"
+        "progress": "learning",
+        "quiz": "5e532332ab25a82aeb55bb95"
     },
     {
 		"_id": "5d7a514b5d2c12c7449be022",
@@ -48,8 +48,8 @@
 		"POS": "noun",
 		"origin": "mid 16th century (in the sense ‘bitter taste or smell’): from French acrimonie or Latin acrimonia, from acer, acri- ‘pungent, acrid’.",
 		"pronounce": "/ˈakrəˌmōnē/",
-        "quiz": "5e530ba5f85ba704fe658686",
-        "progress": "learned"
+        "progress": "learned",
+        "quiz": "5e530ba5f85ba704fe658686"
     }
     
 ]
