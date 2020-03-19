@@ -52,8 +52,11 @@ QuizSchema.virtual('words', {
     justOne: false
 });
 
+/*
 QuizSchema.virtual('wordCount1').get(function() {
+    console.log("hi");
     return this.words.length;
 });
+*/
 
 module.exports = mongoose.model('quiz', QuizSchema);
