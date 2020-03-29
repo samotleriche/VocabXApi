@@ -9,7 +9,11 @@
                 "use": "an amalgam of rock structures"
             }
         ],
-		"POS": "noun",
+        "POS": "noun",
+        "examples": [
+            "a curious amalgam of the traditional and the modern.",
+            "an amalgam of strength, reputation, and commitment to ethical principles."
+        ],
 		"origin": "late 15th century: from French amalgame or medieval Latin amalgama, from Greek malagma ‘an emollient’.",
         "pronounce": "/əˈmalɡəm/",
         "progress": "learning",
@@ -29,7 +33,11 @@
                 "use": "it was a sample of galvanized steel"
             }
         ],
-		"POS": "verb",
+        "POS": "verb",
+        "examples": [
+            "the urgency of his voice galvanized them into action.",
+            "The country was galvanized in the weeks and months after 9/11."
+        ],
 		"origin": "early 19th century (in the sense ‘stimulate by electricity’): from French galvaniser (see Galvani, Luigi).",
 		"pronounce": "/ˈɡalvəˌnīz/",
         "progress": "learning",
@@ -45,9 +53,26 @@
                 "use": "the acrimony in his words stung."
             }
         ],
-		"POS": "noun",
+        "POS": "noun",
+        "examples": [
+            "the acrimony in his words stung.",
+            "Her acrimony for her neighbors manifests itself with shouting and stomping."
+        ],
 		"origin": "mid 16th century (in the sense ‘bitter taste or smell’): from French acrimonie or Latin acrimonia, from acer, acri- ‘pungent, acrid’.",
 		"pronounce": "/ˈakrəˌmōnē/",
+        "progress": "learned",
+        "quiz": "5e530ba5f85ba704fe658686"
+    },
+    {
+        "_id": "5e7fbb878a800042357817ff",
+        "title": "Arduous",
+        "definition": "involving or requiring strenuous effort; difficult and tiring",
+        "POS": "adjective",
+        "examples": [
+            "the arduous work of preparing a Dictionary of the English Language.",
+            "an arduous journey."
+        ],
+        "origin": "mid 16th century: from Latin arduus ‘steep, difficult’+ -ous.",
         "progress": "learned",
         "quiz": "5e530ba5f85ba704fe658686"
     }

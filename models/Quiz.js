@@ -15,6 +15,9 @@ const QuizSchema = new mongoose.Schema({
         required: [true, 'Please add a description'],
         maxlength: [250, 'Name cannot be more than 250 characters']
     },
+    wordCount: {
+        type: Number
+    },
     completed: Boolean,
     progress: {
         type: [String],
@@ -24,10 +27,6 @@ const QuizSchema = new mongoose.Schema({
             'finished'
         ],
         default: 'none'
-    },
-    wordCount: {
-        type: Number,
-        default: 0
     },
     createdAt: {
         type: Date,
