@@ -9,20 +9,18 @@ const asyncHandler = require("../middleware/async");
 // @route   Get /api/v1/quizzes/:quizId/words
 // @access  Public
 exports.getWords = asyncHandler(async (req, res, next) => {
-  let query;
   console.log(req.params);
   if (req.params.quizId) {
-    query = Word.find({ quiz: req.params.quizId });
-  } else {
-    query = Word.find().populate({
-      path: "quiz",
-      select: "name description"
+    const words = await Word.find({ quiz: req.params.quizId });
+
+    return res.status(200).json({
+      success: true,
+      count: words.length,
+      data: words
     });
+  } else {
+    res.status(200).json(res.advancedResults);
   }
-
-  const words = await query;
-
-  res.status(200).json({ success: true, count: words.length, data: words });
 });
 
 // @desc    Get word by id

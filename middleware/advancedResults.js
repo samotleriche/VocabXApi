@@ -13,10 +13,13 @@ const advancedResults = (model, populate) => async (req, res, next) => {
 
   queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
 
-  query = model.find(JSON.parse(queryStr)).populate({
-    path: "words",
-    select: "title POS"
-  });
+  // Find resource
+  query = model.find(JSON.parse(queryStr));
+  
+//   .populate({
+//     path: "words",
+//     select: "title POS"
+//   });
 
   // Select fields
   if (req.query.select) {
@@ -41,6 +44,11 @@ const advancedResults = (model, populate) => async (req, res, next) => {
   const total = await model.countDocuments();
 
   query = query.skip(startIndex).limit(limit);
+
+
+  if (populate) {
+      query = query.populate(populate);
+  }
 
   //Executing query
   const results = await query;

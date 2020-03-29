@@ -5,7 +5,11 @@ const {
     updateQuiz, 
     createQuiz, 
     deleteQuiz
-} = require('../controllers/quizzes')
+} = require('../controllers/quizzes');
+
+const Quiz = require('../models/Quiz');
+const advancedResults = require('../middleware/advancedResults');
+
 const router = express.Router();
 
 // Include other resource routers
@@ -16,7 +20,10 @@ const wordRouter = require('./words');
 router.use('/:quizId/words', wordRouter);
 
 router.route('/')
-    .get(getQuizzes)
+    .get(advancedResults(Quiz, {
+            path: "words",
+            select: "title POS"
+          }), getQuizzes)
     .post(createQuiz);
 
 router.route('/:id')

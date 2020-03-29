@@ -5,14 +5,11 @@ const asyncHandler = require('../middleware/async');
 
 
 // @desc    Get all quizzes
-// @route   Get /api/v1/bootcamps
+// @route   Get /api/v1/quizzes
 // @access  Public 
 exports.getQuizzes = asyncHandler(async (req, res, next) => {
 
-    
-    res
-        .status(200)
-        .json({ success: true, count: quizzes.length, pagination, data: quizzes })
+    res.status(200).json(res.advancedResults);
 
 });
 
