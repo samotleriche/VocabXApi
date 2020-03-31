@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const slugify = require("slugify");
 const geocoder = require("../utils/geocoder");
+const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken');
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -37,8 +39,7 @@ const UserSchema = new mongoose.Schema({
     default: Date.now
   },
   address: {
-    type: String,
-    required: [true, "Please add an address"]
+    type: String
   },
   location: {
     type: {
@@ -60,25 +61,43 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
+//  Encrypt password with bcrypt
+UserSchema.pre('save', async function(next) {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+});
+
 UserSchema.pre("save", function(next) {
   this.slug = slugify(this.name, { lower: true });
   next();
 });
 
-UserSchema.pre("save", async function(next) {
-  const loc = await geocoder.geocode(this.address);
-  this.location = {
-    type: "Point",
-    coordinates: [loc[0].longitude, loc[0].latitude],
-    formattedAddress: loc[0].formattedAddress,
-    street: loc[0].streetName,
-    city: loc[0].city,
-    state: loc[0].state,
-    zipcode: loc[0].zipcode,
-    country: loc[0].countryCode
-  };
-  this.address = undefined;
-  next();
-});
+// UserSchema.pre("save", async function(next) {
+//   const loc = await geocoder.geocode(this.address);
+//   this.location = {
+//     type: "Point",
+//     coordinates: [loc[0].longitude, loc[0].latitude],
+//     formattedAddress: loc[0].formattedAddress,
+//     street: loc[0].streetName,
+//     city: loc[0].city,
+//     state: loc[0].state,
+//     zipcode: loc[0].zipcode,
+//     country: loc[0].countryCode
+//   };
+//   this.address = undefined;
+//   next();
+// });
+
+// Sign JWT and return
+UserSchema.methods.getSignedJwtToken = function() {
+    return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
+        expiresIn: process.env.JWT_EXPIRE
+    });
+};
+
+// Match user entered PW to hashed password in database
+UserSchema.methods.matchPassword = async function(enteredPassword) {
+    return await bcrypt.compare(enteredPassword, this.password);
+}
 
 module.exports = mongoose.model("user", UserSchema);
