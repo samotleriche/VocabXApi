@@ -12,7 +12,7 @@ const advancedResults = require("../middleware/advancedResults");
 
 const router = express.Router();
 
-const { protect } = require("../middleware/auth");
+const { protect, authorize } = require("../middleware/auth");
 
 // Include other resource routers
 
@@ -25,18 +25,19 @@ router
   .route("/")
   .get(
     protect,
+    authorize('publisher','admin'),
     advancedResults(Quiz, {
       path: "words",
       select: "title POS"
     }),
     getQuizzes
   )
-  .post(createQuiz);
+  .post(protect, authorize('publisher','admin'), createQuiz);
 
 router
   .route("/:id")
   .get(getQuiz)
-  .put(updateQuiz)
-  .delete(deleteQuiz);
+  .put(protect, updateQuiz)
+  .delete(protect, deleteQuiz);
 
 module.exports = router;

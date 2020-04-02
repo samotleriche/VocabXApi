@@ -7,8 +7,8 @@
         "name": "Easiest words",
         "description": "High frequency words",
         "completed": true,
-        "__v": 0,
-        "createdAt": "2020-01-26T01:48:35.298Z"
+        "createdAt": "2020-01-26T01:48:35.298Z",
+        "user":"5e54ae546c725e4fc5958ff9"
     },
     {
         "progress": [
@@ -18,7 +18,8 @@
         "name": "Easiestest words",
         "description": "Higher frequency wordssssssss",
         "completed": true,
-        "createdAt": "2020-03-23T23:38:16.865Z"
+        "createdAt": "2020-03-23T23:38:16.865Z",
+        "user":"5e54ae546c725e4fc5958ff7"
     },
     {
         "progress": [
@@ -28,6 +29,7 @@
         "name": "Medium words",
         "description": "Higher frequency words",
         "completed": false,
-        "createdAt": "2020-02-23T23:54:18.110Z"
+        "createdAt": "2020-02-23T23:54:18.110Z",
+        "user":"5e54ae546c725e4fc5958ff6"
     }
 ]

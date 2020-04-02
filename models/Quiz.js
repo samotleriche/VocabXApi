@@ -31,7 +31,13 @@ const QuizSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    }
+    },
+    user: {
+        type: mongoose.Schema.ObjectId,
+        ref: "user",
+        required: true,
+        select: true
+      }
 }, {
     toJSON: { virtuals: true},
     toObject: { virtuals: true}

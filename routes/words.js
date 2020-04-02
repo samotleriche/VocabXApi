@@ -8,6 +8,8 @@ const {
   wordPhotoUpload
 } = require("../controllers/words");
 
+const { protect, authorize } = require("../middleware/auth");
+
 const Word = require("../models/Word");
 const advancedResults = require("../middleware/advancedResults");
 
@@ -24,12 +26,12 @@ router
     }),
     getWords
   )
-  .post(createWord);
+  .post(protect, createWord);
 
 router
   .route("/:id")
   .get(getWord)
-  .put(updateWord)
-  .delete(deleteWord);
+  .put(protect, authorize("admin"), updateWord)
+  .delete(protect, deleteWord);
 
 module.exports = router;
