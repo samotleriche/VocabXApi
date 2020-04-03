@@ -31,7 +31,7 @@ router
 router
   .route("/:id")
   .get(getWord)
-  .put(protect, authorize("admin"), updateWord)
+  .put(protect, authorize('publisher', 'admin'), updateWord)
   .delete(protect, deleteWord);
 
 module.exports = router;

@@ -34,6 +34,11 @@ const WordSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: "quiz",
     required: true
+  },
+  user: {
+    type: mongoose.Schema.ObjectId,
+    ref: "user",
+    required: true
   }
 });
 

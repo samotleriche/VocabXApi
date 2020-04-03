@@ -69,7 +69,7 @@ exports.updateQuiz = asyncHandler(async (req, res, next) => {
   if (quiz.user.toString() !== req.user.id && req.user.role !== "admin") {
     return next(
       new ErrorResponse(
-        `User ${req.params.id} is not authorized to update this Quix`,
+        `User ${req.params.id} is not authorized to update this Quiz`,
         401
       )
     );
@@ -90,13 +90,25 @@ exports.updateQuiz = asyncHandler(async (req, res, next) => {
 // @route   DELETE /api/v1/bootcamps/:id
 // @access  Private
 exports.deleteQuiz = asyncHandler(async (req, res, next) => {
-  const quiz = await Quiz.findByIdAndDelete(req.params.id);
+  const quiz = await Quiz.findById(req.params.id);
 
   if (!quiz) {
     return next(
       new ErrorResponse(`Quiz not found with id of ${req.params.id}`, 404)
     );
   }
+  // Make sure user is quiz owner
+  if (quiz.user.toString() !== req.user.id && req.user.role !== "admin") {
+    return next(
+      new ErrorResponse(
+        `User ${req.params.id} is not authorized to delete this Quix`,
+        401
+      )
+    );
+  }
+
+  quiz.remove();
+
 
   res.status(200).json({
     success: true,
