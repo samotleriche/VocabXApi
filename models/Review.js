@@ -1,39 +1,25 @@
 const mongoose = require("mongoose");
 
-const WordSchema = new mongoose.Schema({
+const ReviewSchema = new mongoose.Schema({
   title: {
     type: String,
-    unique: true,
     trim: true,
-    required: [true, "Please add a course title"]
+    required: [true, "Please add a title for review"],
+    maxlength: 100
   },
-  definition: {
+  text: {
     type: String,
-    required: [true, "Please add a definition"]
+    required: [true, "Please add some text"]
   },
-  POS: {
-    type: String,
-    required: [true, "Please add a part of speach"],
-    enum: ["noun", "verb", "adjective", "adverb"]
-  },
-  origin: {
-    type: String
-  },
-  pronouce: {
-    type: String
-  },
-  progress: {
-    type: String,
-    required: [true, "Please add a progress amount"],
-    enum: ["none", "learning", "learned"]
-  },
-  examples: {
-    type: [String]
+  rating: {
+    type: Number,
+    required: [true, "Please add a rating between 1 and 5"],
+    min: 1,
+    max: 5
   },
   createdAt: {
-    type: Date,
-    default: Date.now,
-    select: true
+      type: Date,
+      default: Date.now
   },
   quiz: {
     type: mongoose.Schema.ObjectId,
@@ -47,14 +33,14 @@ const WordSchema = new mongoose.Schema({
   }
 });
 
-WordSchema.pre("save", function(next) {
+ReviewSchema.pre("save", function(next) {
   this.title =
     this.title.charAt(0).toUpperCase() + this.title.substr(1).toLowerCase();
   next();
 });
 
 // Static method to get the count of words
-WordSchema.statics.getWordCount = async function(quizId) {
+ReviewSchema.statics.getReviewCount = async function(quizId) {
   const obj = await this.aggregate([
     {
       $match: { quiz: quizId }
@@ -62,7 +48,7 @@ WordSchema.statics.getWordCount = async function(quizId) {
     {
       $group: {
         _id: "$quiz",
-        wordCount: { $sum: 1 }
+        reviewCount: { $sum: 1 }
       }
     }
   ]);
@@ -78,13 +64,13 @@ WordSchema.statics.getWordCount = async function(quizId) {
 };
 
 // Call getTotalCourses after save
-WordSchema.post("save", function() {
+ReviewSchema.post("save", function() {
   this.constructor.getWordCount(this.quiz);
 });
 
 // Call getTotalCourses before remove
-WordSchema.pre("remove", function() {
+ReviewSchema.pre("remove", function() {
   this.constructor.getWordCount(this.quiz);
 });
 
-module.exports = mongoose.model("word", WordSchema);
+module.exports = mongoose.model("review", ReviewSchema);

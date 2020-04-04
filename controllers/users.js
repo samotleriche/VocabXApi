@@ -5,20 +5,19 @@ const geocoder = require('../utils/geocoder');
 
 // @desc    Get all users
 // @route   Get /api/v1/users
-// @access  Public 
+// @access  Private 
 exports.getUsers = asyncHandler(async (req, res, next) => {
 
-    const users = await User.find();
-
+    //const users = await User.find();
     res
         .status(200)
-        .json({ success: true, count: users.length, data: users })
+        .json(res.advancedResults);
 
 });
 
 // @desc    Get user by id
-// @route   Get /api/v1/user/:id
-// @access  Public 
+// @route   Get /api/v1/users/:id
+// @access  Private 
 exports.getUser = asyncHandler(async (req, res, next) => {
 
     const user = await User.findById(req.params.id);
@@ -36,8 +35,8 @@ exports.getUser = asyncHandler(async (req, res, next) => {
 });
 
 // @desc    Create a user
-// @route   Get /api/v1/users
-// @access  Public 
+// @route   POST /api/v1/users
+// @access  Private 
 exports.createUser = asyncHandler(async (req, res, next) => {
 
     const user = await User.create(req.body);
@@ -50,8 +49,8 @@ exports.createUser = asyncHandler(async (req, res, next) => {
 });
 
 // @desc    Update a user
-// @route   Get /api/v1/users/:id
-// @access  Public 
+// @route   PUT /api/v1/users/:id
+// @access  Private 
 exports.updateUser = asyncHandler(async (req, res, next) => {
 
     const user = await User.findByIdAndUpdate(req.params.id, req.body, {
@@ -72,9 +71,9 @@ exports.updateUser = asyncHandler(async (req, res, next) => {
 
 });
 
-// @desc    Get all users
-// @route   Get /api/v1/users/:id
-// @access  Public 
+// @desc    Delete a users
+// @route   DELETE /api/v1/users/:id
+// @access  Private 
 exports.deleteUser = asyncHandler(async (req, res, next) => {
 
     const user = await User.findByIdAndDelete(req.params.id);
@@ -89,6 +88,7 @@ exports.deleteUser = asyncHandler(async (req, res, next) => {
         .status(200)
         .json({ 
             success: true,
+            deleted: true,
             data: user
         });
 

@@ -7,22 +7,26 @@ const {
   deleteUser,
   getUserInRadius
 } = require("../controllers/users");
+const User = require("../models/User");
+const router = express.Router();
 
 const { protect, authorize } = require("../middleware/auth");
+const advancedResults = require("../middleware/advancedResults");
 
-const router = express.Router();
+router.use(protect);
+router.use(authorize("publisher", "admin"));
 
 router.route("/radius/:zipcode/:distance").get(getUserInRadius);
 
 router
   .route("/")
-  .get(protect, authorize("admin"), getUsers)
-  .post(protect, authorize("publisher"), createUser);
+  .get(advancedResults(User), getUsers)
+  .post(createUser);
 
 router
   .route("/:id")
-  .get(protect, authorize("admin"), getUser)
-  .put(protect, authorize("admin"), updateUser)
-  .delete(protect, authorize("admin"), deleteUser);
+  .get(getUser)
+  .put(updateUser)
+  .delete(deleteUser);
 
 module.exports = router;

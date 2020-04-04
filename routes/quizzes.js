@@ -8,31 +8,32 @@ const {
 } = require("../controllers/quizzes");
 
 const Quiz = require("../models/Quiz");
-const advancedResults = require("../middleware/advancedResults");
 
 const router = express.Router();
 
+const advancedResults = require("../middleware/advancedResults");
 const { protect, authorize } = require("../middleware/auth");
 
 // Include other resource routers
-
 const wordRouter = require("./words");
+const reviewRouter = require("./reviews");
 
 // Re-route into other resource routers
 router.use("/:quizId/words", wordRouter);
+router.use("/:quizId/reviews", reviewRouter);
 
 router
   .route("/")
   .get(
     protect,
-    authorize('publisher','admin'),
+    authorize("publisher", "admin"),
     advancedResults(Quiz, {
       path: "words",
       select: "title POS"
     }),
     getQuizzes
   )
-  .post(protect, authorize('publisher','admin'), createQuiz);
+  .post(protect, authorize("publisher", "admin"), createQuiz);
 
 router
   .route("/:id")

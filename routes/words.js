@@ -8,12 +8,12 @@ const {
   wordPhotoUpload
 } = require("../controllers/words");
 
-const { protect, authorize } = require("../middleware/auth");
-
 const Word = require("../models/Word");
-const advancedResults = require("../middleware/advancedResults");
 
 const router = express.Router({ mergeParams: true });
+
+const { protect, authorize } = require("../middleware/auth");
+const advancedResults = require("../middleware/advancedResults");
 
 router.route("/:id/photo").put(wordPhotoUpload);
 
@@ -31,7 +31,7 @@ router
 router
   .route("/:id")
   .get(getWord)
-  .put(protect, authorize('publisher', 'admin'), updateWord)
+  .put(protect, authorize("publisher", "admin"), updateWord)
   .delete(protect, deleteWord);
 
 module.exports = router;

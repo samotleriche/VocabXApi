@@ -17,6 +17,7 @@ const quizzes = require("./routes/quizzes");
 const users = require("./routes/users");
 const words = require("./routes/words");
 const auth = require("./routes/auth");
+const reviews = require("./routes/reviews");
 
 // Connect to db
 connectDB();
@@ -47,6 +48,7 @@ app.use("/api/v1/quizzes", quizzes);
 app.use("/api/v1/users", users);
 app.use("/api/v1/words", words);
 app.use("/api/v1/auth", auth);
+app.use("/api/v1/reviews", reviews);
 
 app.use(errorHandler);
 
