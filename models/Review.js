@@ -18,8 +18,8 @@ const ReviewSchema = new mongoose.Schema({
     max: 5
   },
   createdAt: {
-      type: Date,
-      default: Date.now
+    type: Date,
+    default: Date.now
   },
   quiz: {
     type: mongoose.Schema.ObjectId,
@@ -33,13 +33,16 @@ const ReviewSchema = new mongoose.Schema({
   }
 });
 
+// Prevent user from making more than one review per quiz
+ReviewSchema.index({ quiz: 1, user: 1 }, { unique: true });
+
 ReviewSchema.pre("save", function(next) {
   this.title =
     this.title.charAt(0).toUpperCase() + this.title.substr(1).toLowerCase();
   next();
 });
 
-// Static method to get the count of words
+// Static method to get the count of reviews
 ReviewSchema.statics.getReviewCount = async function(quizId) {
   const obj = await this.aggregate([
     {
@@ -55,7 +58,7 @@ ReviewSchema.statics.getReviewCount = async function(quizId) {
 
   try {
     await this.model("quiz").findByIdAndUpdate(quizId, {
-      wordCount: obj[0].wordCount
+      reviewCount: obj[0].reviewCount
     });
   } catch (err) {
     console.error(err);
@@ -63,14 +66,14 @@ ReviewSchema.statics.getReviewCount = async function(quizId) {
   console.log(obj);
 };
 
-// Call getTotalCourses after save
+// Call getTotalReviews after save
 ReviewSchema.post("save", function() {
-  this.constructor.getWordCount(this.quiz);
+  this.constructor.getReviewCount(this.quiz);
 });
 
-// Call getTotalCourses before remove
+// Call getTotalReviews before remove
 ReviewSchema.pre("remove", function() {
-  this.constructor.getWordCount(this.quiz);
+  this.constructor.getReviewCount(this.quiz);
 });
 
 module.exports = mongoose.model("review", ReviewSchema);

@@ -1,5 +1,5 @@
 const express = require("express");
-const { getReviews, getReview } = require("../controllers/reviews");
+const { getReviews, getReview, addReview } = require("../controllers/reviews");
 
 const Review = require("../models/Review");
 
@@ -10,13 +10,16 @@ const { protect, authorize } = require("../middleware/auth");
 
 router.use(protect);
 
-router.route("/").get(
-  advancedResults(Review, {
-    path: "quiz",
-    select: "name description"
-  }),
-  getReviews
-);
+router
+  .route("/")
+  .get(
+    advancedResults(Review, {
+      path: "quiz",
+      select: "name description"
+    }),
+    getReviews
+  )
+  .post(protect, authorize("user", "publisher", "admin"), addReview);
 
 router.route("/:id").get(getReview);
 

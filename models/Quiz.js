@@ -18,6 +18,9 @@ const QuizSchema = new mongoose.Schema({
     wordCount: {
         type: Number
     },
+    reviewCount: {
+        type: Number
+    },
     completed: Boolean,
     progress: {
         type: [String],
