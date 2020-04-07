@@ -76,4 +76,38 @@ ReviewSchema.pre("remove", function() {
   this.constructor.getReviewCount(this.quiz);
 });
 
+// Static method to get the count of reviews
+ReviewSchema.statics.getAverageRating = async function(quizId) {
+  const obj = await this.aggregate([
+    {
+      $match: { quiz: quizId }
+    },
+    {
+      $group: {
+        _id: "$quiz",
+        averageRating: { $avg: '$rating' }
+      }
+    }
+  ]);
+
+  try {
+    await this.model("quiz").findByIdAndUpdate(quizId, {
+      averageRating: obj[0].averageRating
+    });
+  } catch (err) {
+    console.error(err);
+  }
+  console.log(obj);
+};
+
+// Call getTotalReviews after save
+ReviewSchema.post("save", function() {
+  this.constructor.getAverageRating(this.quiz);
+});
+
+// Call getTotalReviews before remove
+ReviewSchema.pre("remove", function() {
+  this.constructor.getAverageRating(this.quiz);
+});
+
 module.exports = mongoose.model("review", ReviewSchema);

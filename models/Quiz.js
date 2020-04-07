@@ -21,6 +21,9 @@ const QuizSchema = new mongoose.Schema({
     reviewCount: {
         type: Number
     },
+    averageRating: {
+        type: Number
+    },
     completed: Boolean,
     progress: {
         type: [String],
