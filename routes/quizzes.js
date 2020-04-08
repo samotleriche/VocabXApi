@@ -26,7 +26,7 @@ router
   .route("/")
   .get(
     protect,
-    authorize("publisher", "admin"),
+    authorize("user", "publisher", "admin"),
     advancedResults(Quiz, {
       path: "words",
       select: "title POS"

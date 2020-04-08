@@ -67,13 +67,15 @@ ReviewSchema.statics.getReviewCount = async function(quizId) {
 };
 
 // Call getTotalReviews after save
-ReviewSchema.post("save", function() {
+ReviewSchema.post("save", function(next) {
   this.constructor.getReviewCount(this.quiz);
+  next();
 });
 
 // Call getTotalReviews before remove
-ReviewSchema.pre("remove", function() {
+ReviewSchema.pre("remove", function(next) {
   this.constructor.getReviewCount(this.quiz);
+  next();
 });
 
 // Static method to get the count of reviews
@@ -101,13 +103,15 @@ ReviewSchema.statics.getAverageRating = async function(quizId) {
 };
 
 // Call getTotalReviews after save
-ReviewSchema.post("save", function() {
+ReviewSchema.post("save", function(next) {
   this.constructor.getAverageRating(this.quiz);
+  next();
 });
 
 // Call getTotalReviews before remove
-ReviewSchema.pre("remove", function() {
+ReviewSchema.pre("remove", function(next) {
   this.constructor.getAverageRating(this.quiz);
+  next();
 });
 
 module.exports = mongoose.model("review", ReviewSchema);
