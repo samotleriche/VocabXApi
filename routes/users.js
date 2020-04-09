@@ -14,7 +14,7 @@ const { protect, authorize } = require("../middleware/auth");
 const advancedResults = require("../middleware/advancedResults");
 
 router.use(protect);
-router.use(authorize("publisher", "admin"));
+router.use(authorize("admin"));
 
 router.route("/radius/:zipcode/:distance").get(getUserInRadius);
 

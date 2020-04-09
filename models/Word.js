@@ -38,7 +38,7 @@ const WordSchema = new mongoose.Schema({
   quiz: {
     type: mongoose.Schema.ObjectId,
     ref: "quiz",
-    required: true
+    required: false
   },
   user: {
     type: mongoose.Schema.ObjectId,

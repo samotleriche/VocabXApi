@@ -47,8 +47,41 @@ exports.getWord = asyncHandler(async (req, res, next) => {
 // @route   POST /api/v1/quizzes/:quizId/words
 // @access  Private
 exports.createWord = asyncHandler(async (req, res, next) => {
-  req.body.quiz = req.params.quizId;
   req.body.user = req.user.id;
+  if (req.params.quizId) {
+    req.body.quiz = req.params.quizId;
+
+    const quiz = await Quiz.findById(req.params.quizId);
+    if (!quiz) {
+      return next(
+        new ErrorResponse(`No Quiz with id of ${req.params.quizId} found`, 404)
+      );
+    }
+
+    // Make sure user is quiz owner
+    if (quiz.user.toString() !== req.user.id && req.user.role !== "admin") {
+      return next(
+        new ErrorResponse(
+          `User ${req.user.id} is not authorized to add a word to quiz: ${quiz._id}`,
+          401
+        )
+      );
+    }
+  }
+  const word = await Word.create(req.body);
+  res.status(201).json({
+    success: true,
+    data: word
+  });
+});
+
+// TODO FINISH THIS
+// @desc    Associate word to quiz
+// @route   PUT /api/v1/quizzes/:quizId/words/:wordId
+// @access  Private
+exports.associateWord = asyncHandler(async (req, res, next) => {
+  req.body.user = req.user.id;
+  req.body.quiz = req.params.quizId;
 
   const quiz = await Quiz.findById(req.params.quizId);
   if (!quiz) {
@@ -66,8 +99,15 @@ exports.createWord = asyncHandler(async (req, res, next) => {
       )
     );
   }
+  const word = await Word.findById(req.params.wordId);
+  if (!word) {
+    return next(
+      new ErrorResponse(`No Word with id of ${req.params.wordId} found`, 404)
+    );
+  }
 
-  const word = await Word.create(req.body);
+  word = Word.findByIdAndUpdate(req.params.wordId, { quiz: req.params.quizId });
+
   res.status(201).json({
     success: true,
     data: word
@@ -86,20 +126,20 @@ exports.updateWord = asyncHandler(async (req, res, next) => {
     );
   }
 
-    // Make sure user is word owner
-    if (word.user.toString() !== req.user.id && req.user.role !== "admin") {
-      return next(
-        new ErrorResponse(
-          `User ${req.user.id} is not authorized to update word: ${word._id}`,
-          401
-        )
-      );
-    }
+  // Make sure user is word owner
+  if (word.user.toString() !== req.user.id && req.user.role !== "admin") {
+    return next(
+      new ErrorResponse(
+        `User ${req.user.id} is not authorized to update word: ${word._id}`,
+        401
+      )
+    );
+  }
 
-    word = await Word.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true
-    });
+  word = await Word.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true
+  });
 
   res.status(200).json({ success: true, data: word });
 });
