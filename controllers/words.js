@@ -77,7 +77,7 @@ exports.createWord = asyncHandler(async (req, res, next) => {
 
 // TODO FINISH THIS
 // @desc    Associate word to quiz
-// @route   PUT /api/v1/quizzes/:quizId/words/:wordId
+// @route   PUT /api/v1/quizzes/:quizId/words/:Id
 // @access  Private
 exports.associateWord = asyncHandler(async (req, res, next) => {
   req.body.user = req.user.id;
@@ -115,11 +115,25 @@ exports.associateWord = asyncHandler(async (req, res, next) => {
 });
 
 // @desc    update word
-// @route   Get /api/v1/words/:id
+// @route   PUT /api/v1/words/:id
+// @desc    Associate word to quiz
+// @route   PUT /api/v1/quizzes/:quizId/words/:Id
 // @access  Public
 exports.updateWord = asyncHandler(async (req, res, next) => {
-  const word = await Word.findById(req.params.id);
+  req.body.user = req.user.id;
 
+  if (req.params.quizId) {
+    console.log("HERE");
+    req.body.quiz = req.params.quizId;
+    const quiz = await Quiz.findById(req.params.quizId);
+    if (!quiz) {
+      return next(
+        new ErrorResponse(`No Quiz with id of ${req.params.quizId} found`, 404)
+      );
+    }
+  }
+
+  let word = await Word.findById(req.params.id);
   if (!word) {
     return next(
       new ErrorResponse(`User word found with id of ${req.params.id}`, 404)
@@ -136,12 +150,26 @@ exports.updateWord = asyncHandler(async (req, res, next) => {
     );
   }
 
-  word = await Word.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true
-  });
+  if (req.params.quizId) {
+    console.log("HERE 2");
+    word = await Word.findByIdAndUpdate(
+      req.params.id,
+      { quiz: req.body.quiz },
+      {
+        new: true,
+        runValidators: true
+      }
+    );
 
-  res.status(200).json({ success: true, data: word });
+    res.status(200).json({ success: true, data: word });
+  } else {
+    word = await Word.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true
+    });
+
+    res.status(200).json({ success: true, data: word });
+  }
 });
 
 // @desc    delete word

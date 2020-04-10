@@ -5,7 +5,8 @@ const {
   updateWord,
   createWord,
   deleteWord,
-  wordPhotoUpload
+  wordPhotoUpload,
+  associateWord
 } = require("../controllers/words");
 
 const Word = require("../models/Word");
@@ -15,7 +16,9 @@ const router = express.Router({ mergeParams: true });
 const { protect, authorize } = require("../middleware/auth");
 const advancedResults = require("../middleware/advancedResults");
 
-router.route("/:id/photo").put(wordPhotoUpload);
+router
+  .route("/:id/photo")
+  .put(protect, authorize("publisher", "admin"), wordPhotoUpload);
 
 router
   .route("/")
