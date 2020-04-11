@@ -123,7 +123,6 @@ exports.updateWord = asyncHandler(async (req, res, next) => {
   req.body.user = req.user.id;
 
   if (req.params.quizId) {
-    console.log("HERE");
     req.body.quiz = req.params.quizId;
     const quiz = await Quiz.findById(req.params.quizId);
     if (!quiz) {
@@ -151,7 +150,6 @@ exports.updateWord = asyncHandler(async (req, res, next) => {
   }
 
   if (req.params.quizId) {
-    console.log("HERE 2");
     word = await Word.findByIdAndUpdate(
       req.params.id,
       { quiz: req.body.quiz },
