@@ -1,14 +1,20 @@
-import React, { Fragment } from 'react';
-import Navbar from './components/layout/Navbar'
-import Landing from './components/layout/Landing'
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Fragment } from "react";
+import Navbar from "./components/layout/Navbar";
+import Words from "./components/words/Words";
+import "./App.css";
 
-const App = () => 
-  <Fragment>
-    <Navbar />
-    <Landing />
-  </Fragment>
+class App extends React.Component {
+  foob = () => "arrrgh";
 
+  render() {
+    const numbers = [3, 4, 5];
+    return (
+      <div className='App'>
+        <Navbar />
+        <Words />
+      </div>
+    );
+  }
+}
 
 export default App;
