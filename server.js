@@ -24,6 +24,7 @@ const users = require("./routes/users");
 const words = require("./routes/words");
 const auth = require("./routes/auth");
 const reviews = require("./routes/reviews");
+const nlp = require('./routes/nlp');
 
 // Connect to db
 connectDB();
@@ -79,6 +80,7 @@ app.use("/api/v1/users", users);
 app.use("/api/v1/words", words);
 app.use("/api/v1/auth", auth);
 app.use("/api/v1/reviews", reviews);
+app.use("/api/v1/nlp", nlp);
 
 app.use(errorHandler);
 
