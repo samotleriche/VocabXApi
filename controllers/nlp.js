@@ -53,3 +53,31 @@ exports.getSentiment = asyncHandler(async (req, res, next) => {
     data: result
   });
 });
+
+// @desc    Get text classify
+// @route   Get /api/v1/nlp/classify
+// @access  Public
+exports.getClassify = asyncHandler(async (req, res, next) => {
+    let classifier = new natural.BayesClassifier();
+    let stemAndToken = new natural.PorterStemmer.attach();
+  
+    classifier.addDocument('i am long qqqq', 'buy');
+    classifier.addDocument('buy the q\'s', 'buy');
+    classifier.addDocument('short gold', 'sell');
+    classifier.addDocument('sell gold', 'sell');
+
+    classifier.train();
+
+    console.log(classifier.getClassifications('i am long long copper'));
+
+    let { text } = req.body;
+  
+    text = text.tokenizeAndStem();
+  
+    const result = classifier.classify(text);
+  
+    res.status(200).json({
+      success: true,
+      data: result
+    });
+  });

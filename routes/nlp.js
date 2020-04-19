@@ -1,5 +1,5 @@
 const express = require("express");
-const { getText, getSentiment } = require("../controllers/nlp");
+const { getText, getSentiment, getClassify } = require("../controllers/nlp");
 
 const router = express.Router();
 
@@ -12,5 +12,6 @@ router.use(authorize("admin"));
 router.route("/").get(getText);
 
 router.route("/getSentiment").get(getSentiment);
+router.route("/classify").get(getClassify);
 
 module.exports = router;
