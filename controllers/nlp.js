@@ -60,19 +60,23 @@ exports.getSentiment = asyncHandler(async (req, res, next) => {
 exports.getClassify = asyncHandler(async (req, res, next) => {
     let classifier = new natural.BayesClassifier();
     let stemAndToken = new natural.PorterStemmer.attach();
-  
-    classifier.addDocument('i am long qqqq', 'buy');
-    classifier.addDocument('buy the q\'s', 'buy');
-    classifier.addDocument('short gold', 'sell');
-    classifier.addDocument('sell gold', 'sell');
+
+    let { text, test } = req.body;
+
+    const inputLength = text.length;
+
+    for(let x = 0; x < inputLength; x++){
+        if (x >= inputLength/2)
+            classifier.addDocument(text[x], 'good');
+        else
+            classifier.addDocument(text[x], 'bad');
+    }
 
     classifier.train();
 
-    console.log(classifier.getClassifications('i am long long copper'));
+    //text = text.tokenizeAndStem();
 
-    let { text } = req.body;
-  
-    text = text.tokenizeAndStem();
+    console.log(classifier.getClassifications(test));
   
     const result = classifier.classify(text);
   
