@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import WordItem from './WordItem';
+import WordItem from "./WordItem";
 
 class Words extends Component {
   state = {
@@ -27,13 +27,19 @@ class Words extends Component {
 
   render() {
     return (
-      <div>
-        {this.state.words.map(word => (
-          <WordItem key={word.title} word={word}/>
+      <div style={userStyle}>
+        {this.props.words.map(word => (
+          <WordItem key={word.title} word={word} />
         ))}
       </div>
     );
   }
 }
+
+const userStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
+  gridGap: "1rem"
+};
 
 export default Words;

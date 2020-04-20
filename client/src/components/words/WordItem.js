@@ -1,18 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from 'prop-types';
 
-class WordItem extends Component {
-  render() {
-    const { title, definition, POS } = this.props.word;
-    return (
-      <div className='card text-center'>
-        <h3>{title}</h3>
+const WordItem = ({ word: { title, definition, POS } }) => {
+  return (
+    <div className='card text-center'>
+      <h3>{title}</h3>
 
-        <div>
-          {definition}, <strong>{POS}</strong>
-        </div>
+      <div>
+        {definition}, <strong>{POS}</strong>
       </div>
-    );
-  }
+    </div>
+  );
+};
+
+WordItem.propTypes = {
+  word: PropTypes.object.isRequired,
 }
 
 export default WordItem;
