@@ -6,7 +6,7 @@ import "./App.css";
 
 class App extends React.Component {
   state = {
-    users: [],
+    words: [],
     loading: false
   };
 
@@ -15,7 +15,7 @@ class App extends React.Component {
 
     const res = await axios.get("http://api.github.com/users");
 
-    this.setState({ users: res.data, loading: false });
+    this.setState({ words: res.data, loading: false });
     console.log(res);
   }
 
@@ -25,7 +25,7 @@ class App extends React.Component {
       <div className='App'>
         <Navbar />
         <div className='container'>
-          <Words loading={this.state.loading} users={this.state.users} />
+          <Words loading={this.state.loading} users={this.state.words} />
         </div>
       </div>
     );

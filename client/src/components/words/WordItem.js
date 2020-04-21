@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const WordItem = ({ word: { title, definition, POS } }) => {
+const WordItem = ({ user: { login, avatar_url, html_url } }) => {
   return (
     <div className='card text-center'>
       <h3>{title}</h3>
-
+      <img src={avatar_url} alt='' className='round-img' style={{ width: '60px' }} />
       <div>
         {definition}, <strong>{POS}</strong>
       </div>
