@@ -1,0 +1,35 @@
+[
+    {
+        "progress": [
+            "none"
+        ],
+        "_id": "5e530ba5f85ba704fe658686",
+        "name": "Easiest words",
+        "description": "High frequency words",
+        "completed": true,
+        "createdAt": "2020-01-26T01:48:35.298Z",
+        "user":"5e54ae546c725e4fc5958ff9"
+    },
+    {
+        "progress": [
+            "started"
+        ],
+        "_id": "5e530ce82e6d9c064eb66f2b",
+        "name": "Easiestest words",
+        "description": "Higher frequency wordssssssss",
+        "completed": true,
+        "createdAt": "2020-03-23T23:38:16.865Z",
+        "user":"5e54ae546c725e4fc5958ff7"
+    },
+    {
+        "progress": [
+            "none"
+        ],
+        "_id": "5e5310aa0865680da4667b95",
+        "name": "Medium words",
+        "description": "Higher frequency words",
+        "completed": false,
+        "createdAt": "2020-02-23T23:54:18.110Z",
+        "user":"5e54ae546c725e4fc5958ff6"
+    }
+]

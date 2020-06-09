@@ -1,0 +1,513 @@
+[
+    {
+        "_id": "5d7a514b5d2c12c7449be020",
+        "title": "Amalgam",
+        "definition": "a mixture or blend",
+        "cases": [
+            {
+                "text": "a mixture or blend",
+                "use": "an amalgam of rock structures"
+            }
+        ],
+        "POS": "noun",
+        "examples": [
+            "a curious amalgam of the traditional and the modern.",
+            "an amalgam of strength, reputation, and commitment to ethical principles."
+        ],
+        "origin": "late 15th century: from French amalgame or medieval Latin amalgama, from Greek malagma ‘an emollient’.",
+        "pronounce": "/əˈmalɡəm/",
+        "progress": "learning",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54ae546c725e4fc5958ff6"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be021",
+        "title": "Galvanize",
+        "definition": "shock or excite (someone) into taking action.",
+        "cases": [
+            {
+                "text": "shock or excite (someone) into taking action.",
+                "use": "the impassioned speach galvanized the onlookers"
+            },
+            {
+                "text": "coat (iron or steel) with a protective layer of zinc.",
+                "use": "it was a sample of galvanized steel"
+            }
+        ],
+        "POS": "verb",
+        "examples": [
+            "the urgency of his voice galvanized them into action.",
+            "The country was galvanized in the weeks and months after 9/11."
+        ],
+        "origin": "early 19th century (in the sense ‘stimulate by electricity’): from French galvaniser (see Galvani, Luigi).",
+        "pronounce": "/ˈɡalvəˌnīz/",
+        "progress": "learning",
+        "quiz": "5e532332ab25a82aeb55bb95",
+        "user": "5e54ae546c725e4fc5958ff6"
+    },
+    {
+        "_id": "5d7a514b5d2c12c7449be022",
+        "title": "Acrimony",
+        "definition": "bitterness or ill feeling.",
+        "cases": [
+            {
+                "text": "bitterness or ill feeling.",
+                "use": "the acrimony in his words stung."
+            }
+        ],
+        "POS": "noun",
+        "examples": [
+            "the acrimony in his words stung.",
+            "Her acrimony for her neighbors manifests itself with shouting and stomping."
+        ],
+        "origin": "mid 16th century (in the sense ‘bitter taste or smell’): from French acrimonie or Latin acrimonia, from acer, acri- ‘pungent, acrid’.",
+        "pronounce": "/ˈakrəˌmōnē/",
+        "progress": "learned",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54ae546c725e4fc5958ff6"
+    },
+    {
+        "_id": "5e7fbb878a800042357817ff",
+        "title": "Arduous",
+        "definition": "involving or requiring strenuous effort; difficult and tiring",
+        "POS": "adjective",
+        "examples": [
+            "the arduous work of preparing a Dictionary of the English Language.",
+            "an arduous journey."
+        ],
+        "origin": "mid 16th century: from Latin arduus ‘steep, difficult’+ -ous.",
+        "progress": "learned",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Wanting",
+        "definition": "lacking in a certain required or necessary quality; not existing or supplied; absent",
+        "POS": "adjective",
+        "examples": [
+            "The analysis was wanting in reliable data.",
+            "Compassion was wanting in his interactions with others."
+        ],
+        "origin": "mid 16th century: from Latin arduus ‘steep, difficult’+ -ous.",
+        "progress": "none",
+        "pronounce": "ˈwän(t)iNG",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Demur",
+        "definition": "To object or show reluctance; raise doubts or objection or show reluctance",
+        "POS": "verb",
+        "examples": [
+            "He would have normally demurred to such a proposal, but he accepted.",
+            "Jack disliked salads, so he demurred when his wife suggested he try Kale."
+        ],
+        "origin": "Middle English (in the sense ‘linger, delay’): from Old French demourer (verb), demeure (noun), based on Latin de- ‘away, completely’ + morari ‘delay’.",
+        "progress": "none",
+        "pronounce": "dəˈmər",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Parsimonious",
+        "definition": "unwilling to spend money or use resources; extremely frugal, miserly",
+        "POS": "adjective",
+        "examples": [
+            "Kate was so parsimonious that she never went out to eat with coworkers, even when her friends would beg her to join."
+        ],
+        "progress": "none",
+        "pronounce": "ˌpärsəˈmōnēəs",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Anomalous",
+        "definition": "Unusual or unexpected; out of the ordinary",
+        "POS": "adjective",
+        "examples": [
+            "The patient's behaviour was altogether anomalous"
+        ],
+        "progress": "none",
+        "pronounce": "əˈnämələs",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Equivocal",
+        "definition": "Open to more than one interpretation; not easy to explain or understand.",
+        "POS": "adjective",
+        "examples": [
+            "The president's response to the question was equivocal."
+        ],
+        "progress": "none",
+        "pronounce": "əˈkwivək(ə)l",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Lucid",
+        "definition": "Easy to understand; clearly expressed",
+        "POS": "adjective",
+        "examples": [
+            "He could write in a clear and lucid manner."
+        ],
+        "progress": "none",
+        "pronounce": "ˈlo͞osəd",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Precipitate",
+        "definition": "To cause something to happen suddenly or without warning",
+        "POS": "verb",
+        "examples": [
+            "The heated argument precipitated a physical altercation."
+        ],
+        "progress": "none",
+        "pronounce": "prəˈsipəˌtāt",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Assuage",
+        "definition": "To make (an unpleasant feeling) less intense; satisfy",
+        "POS": "verb",
+        "examples": [
+            "The compliments assuaged the king's anger."
+        ],
+        "progress": "none",
+        "pronounce": "əˈswāj",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Erudite",
+        "definition": "Having or displaying great knowledge or learning",
+        "POS": "adjective",
+        "examples": [
+            "The philosopher's discussion was erudite"
+        ],
+        "progress": "none",
+        "pronounce": "ˈer(y)əˌdīt",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Opaque",
+        "definition": "Not able to be seen through; not easily understood",
+        "POS": "adjective",
+        "examples": [
+            "The glass was so scratched that it had become opaque.",
+            "The book's meaning was opaque to the reader."
+        ],
+        "progress": "none",
+        "pronounce": "ōˈpāk",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Prodigal",
+        "definition": "Wastefully extravagant; spending resources freely and recklessly.",
+        "POS": "adjective",
+        "examples": [
+            "The prodigal son had finally returned after a summer traveling through europe.",
+            "Her prodigal habits had left her without money or a home."
+        ],
+        "progress": "none",
+        "pronounce": "ˈprädəɡəl",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Enigma",
+        "definition": "Something that is mysterious, puzzling, or hard to understand.",
+        "POS": "noun",
+        "examples": [
+            "The foreigner was an enigma to the young man.",
+            "The instructions were enigmatic."
+        ],
+        "progress": "none",
+        "pronounce": "iˈniɡmə",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Fervid",
+        "definition": "Intensely passionate or enthusiastic, usually to excess.",
+        "POS": "adjective",
+        "examples": [
+            "The super fan shook the star's hand in a fervid manner."
+        ],
+        "progress": "none",
+        "pronounce": "ˈfərvəd",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Placate",
+        "definition": "To make (someone) less angry or hostile.",
+        "POS": "adjective",
+        "examples": [
+            "The son tried to placate his mother with apologies."
+        ],
+        "progress": "none",
+        "pronounce": "ˈplākāt",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Zeal",
+        "definition": "Great enthusiam or passion for a cause or objective.",
+        "POS": "noun",
+        "examples": [
+            "The developer's zeal for learning landed him a prestigious job."
+        ],
+        "progress": "none",
+        "pronounce": "zēl",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Abstain",
+        "definition": "To restrain oneself from doing or enjoying something",
+        "POS": "verb",
+        "examples": [
+            "The patient was told to abstain from eating greasy foods."
+        ],
+        "progress": "none",
+        "pronounce": "əbˈstān",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Audacious",
+        "definition": "a willingness to take bold surprising risks; showing a lack of respect.",
+        "POS": "adjective",
+        "examples": [
+            "The CEO's audacious business plan made him millions.",
+            "The audacious remark landed Jessie in detention."
+        ],
+        "progress": "none",
+        "pronounce": "əbˈstān",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Desiccate",
+        "definition": "To dry out; to remove the water from something",
+        "POS": "verb",
+        "examples": [
+            "In the summer heat the plant had become completely desiccated."
+        ],
+        "progress": "none",
+        "pronounce": "ˈdesəˌkāt",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Laudable",
+        "definition": "worthy of praise and recognition.",
+        "POS": "adjective",
+        "examples": [
+            "Eliminating world hunger is a laudable goal."
+        ],
+        "progress": "none",
+        "pronounce": "ˈlôdəb(ə)l",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Pedant",
+        "definition": "someone who is overly concerned with minor details and rules or with showing academic learning",
+        "POS": "adjective",
+        "examples": [
+            "Jack, a well-known pedant, would always correct his peers on the pronounciation of words."
+        ],
+        "progress": "none",
+        "pronounce": "ˈpednt",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Vacillate",
+        "definition": "Be indecisive; to waver between different actions or opinions.",
+        "POS": "verb",
+        "examples": [
+            "The student would regularly vacillate between going out and staying in to study."
+        ],
+        "progress": "none",
+        "pronounce": "ˈvasəˌlāt",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Adulterate",
+        "definition": "To cause something to be impure or weaker by adding something to it;",
+        "POS": "verb",
+        "examples": [
+            "The drink had been adulterated with water, reducing its potency."
+        ],
+        "progress": "none",
+        "pronounce": "əˈdəltəˌrāt",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Capricious",
+        "definition": "Prone to sudden changes in mood or behavior.",
+        "POS": "adjective",
+        "examples": [
+            "The capricious judge might lengthen someone's sentence depending on the day."
+        ],
+        "progress": "none",
+        "pronounce": "kəˈpriSHəs, kəˈprēSHəs",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Engender",
+        "definition": "To bring about, cause, or produce (something)",
+        "POS": "verb",
+        "examples": [
+            "Hateful words can engender violence."
+        ],
+        "progress": "none",
+        "pronounce": "kəˈpriSHəs, kəˈprēSHəs",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Homogenous",
+        "definition": "Of the same or similar kind",
+        "POS": "adjective",
+        "examples": [
+            "Culturally speaking, the neighborhood was often described as too homogenous."
+        ],
+        "progress": "none",
+        "pronounce": "həˈmäjənəs",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Loquacious",
+        "definition": "Tending to talk a great deal; talkative.",
+        "POS": "adjective",
+        "examples": [
+            "The loquacious professor could spend the entire class time answering a single question."
+        ],
+        "progress": "none",
+        "pronounce": "lōˈkwāSHəs",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Pragmatic",
+        "definition": "Dealing with problems in a reasonable and logical way rather than relying on theories.",
+        "POS": "adjective",
+        "examples": [
+            "The teacher used a pragmatic approach to teaching"
+        ],
+        "progress": "none",
+        "pronounce": "praɡˈmadik",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Apathy",
+        "definition": "Lack of interest, enthusiasm or concern",
+        "POS": "noun",
+        "examples": [
+            "Apathy was widespread among the younger voting population."
+        ],
+        "progress": "none",
+        "pronounce": "ˈapəTHē",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Ineffable",
+        "definition": "Too great or extreme to be expressed or described in words",
+        "POS": "adjective",
+        "examples": [
+            "The view from atop the mountain was Ineffable."
+        ],
+        "progress": "none",
+        "pronounce": "inˈefəb(ə)l",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Exegesis",
+        "definition": "Critical explanation or interpretation of a text, usually a scripture.",
+        "POS": "noun",
+        "examples": [
+            "The arduous work of biblical exegesis."
+        ],
+        "progress": "none",
+        "pronounce": "ˌeksəˈjēsis",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Inexorable",
+        "definition": "Impossible to stop or prevent; impossible to persuade by request.",
+        "POS": "adjective",
+        "examples": [
+            "The inexorable setting of the sun."
+        ],
+        "progress": "none",
+        "pronounce": "ˌinˈeksərəb(ə)l",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Pontificate",
+        "definition": "Express one's opinions in a pompous and dogmatic way.",
+        "POS": "verb",
+        "examples": [
+            "The philosopher would pontificate about dialectical materialism."
+        ],
+        "progress": "none",
+        "pronounce": "ˌinˈeksərəb(ə)l",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Prolific",
+        "definition": "To create many works; producing many fruits or offspring; present in large numbers or quantities",
+        "POS": "adjective",
+        "examples": [
+            "The prolific artist had works in half the museams in the city.",
+            "This species of frog is quite a prolific breeder.",
+            "The now extinct bat was once prolific in these areas."
+        ],
+        "progress": "none",
+        "pronounce": "prəˈlifik",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Exasperate",
+        "definition": "Irritate and frustrate someone intensely.",
+        "POS": "verb",
+        "examples": [
+            "The drama left him feeling exasperated."
+        ],
+        "progress": "none",
+        "pronounce": "iɡˈzaspəˌrāt",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    },
+    {
+        "title": "Auspicious",
+        "definition": "Conducive to success; favorable",
+        "POS": "adjective",
+        "examples": [
+            "The weather was not the most auspicious for sailing"
+        ],
+        "progress": "none",
+        "pronounce": "ôˈspiSHəs",
+        "quiz": "5e530ba5f85ba704fe658686",
+        "user": "5e54abd317b67149faae0d64"
+    }
+]

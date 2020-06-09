@@ -1,0 +1,50 @@
+[
+	{
+		"address": "16400 Ledgemont ln Addison TX 75001",
+		"_id": "5e54abd317b67149faae0d64",
+		"name": "Admin",
+		"email": "samotleriche@gmail.com",
+		"password": "admin123",
+		"role": "admin"
+	},
+	{
+		"address": "45 Upper College Rd Kingston RI 02881",
+		"_id": "5e54ae546c725e4fc5958ff8",
+		"name": "User",
+		"email": "user@gmail.com",
+		"password": "admin123",
+		"role": "user"
+	},
+	{
+		"address": "814 Camino Acoma Santa Fe NM 87505",
+		"_id": "5e54ae546c725e4fc5958ff9",
+		"name": "Tomas",
+		"email": "tomas@gmail.com",
+		"password": "admin123",
+		"role": "publisher"
+	},
+	{
+		"address": "814 Camino Acoma Santa Fe NM 87505",
+		"_id": "5e54ae546c725e4fc5958ff7",
+		"name": "Cassy",
+		"email": "cassy@gmail.com",
+		"password": "admin123",
+		"role": "publisher"
+	},
+	{
+		"address": "814 Camino Acoma Santa Fe NM 87505",
+		"_id": "5e54ae546c725e4fc5958ff6",
+		"name": "Max",
+		"email": "max@gmail.com",
+		"password": "admin123",
+		"role": "publisher"
+	},
+	{
+		"address": "814 Camino Acoma Santa Fe NM 87505",
+		"_id": "5e54ae546c725e4fc5958ff1",
+		"name": "Papa",
+		"email": "papa@gmail.com",
+		"password": "admin123",
+		"role": "publisher"
+	}
+]
